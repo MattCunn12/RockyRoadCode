@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot | Rock Road Tractor Supply</title>
+    <title>Live Chat | Rock Road Tractor Supply</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -61,7 +61,7 @@
             margin: 10px 0;
         }
 
-        .chatbox .bot-message {
+        .chatbox .agent-message {
             color: #007bff;
         }
 
@@ -70,13 +70,18 @@
             color: #28a745;
         }
 
+        .chat-input-container {
+            display: flex;
+            align-items: center;
+        }
+
         .chat-input {
-            width: 100%;
+            width: 80%;
             padding: 10px;
             font-size: 1em;
-            margin-bottom: 1em;
             border-radius: 5px;
             border: 1px solid #ddd;
+            margin-right: 10px;
         }
 
         .chat-submit {
@@ -91,6 +96,11 @@
 
         .chat-submit:hover {
             background-color: #218838;
+        }
+
+        .chatbox .system-message {
+            font-style: italic;
+            color: #999;
         }
     </style>
 </head>
@@ -112,20 +122,21 @@
         <a href="liveChat.html">Live Chat</a>
     </nav>
 
-    <!-- Main Content Section -->
+    <!-- Chat Section -->
     <div class="chat-container">
-
-        <h2>AI Chatbot</h2>
-        <p>How can we assist you today? Ask anything about our tractors and services!</p>
+        <h2>Live Chat Support</h2>
+        <p>Our support team is here to assist you. Start a conversation below:</p>
 
         <!-- Chatbox -->
         <div class="chatbox" id="chatbox">
-            <p class="bot-message">Hello! I'm your virtual assistant. How can I help you today?</p>
+            <p class="system-message">Hello! A representative will be with you shortly.</p>
         </div>
 
-        <!-- Chat Input Section -->
-        <input type="text" id="userInput" class="chat-input" placeholder="Type your message..." />
-        <button class="chat-submit" onclick="sendMessage()">Send</button>
+        <!-- Chat Input and Send Button -->
+        <div class="chat-input-container">
+            <input type="text" id="userInput" class="chat-input" placeholder="Type your message..." />
+            <button class="chat-submit" onclick="sendMessage()">Send</button>
+        </div>
     </div>
 
     <!-- Footer Section -->
@@ -135,36 +146,36 @@
     </footer>
 
     <script>
-        // Function to handle sending user messages and displaying bot responses
+        // Function to send a message and get a response
         function sendMessage() {
             const userMessage = document.getElementById('userInput').value;
             const chatbox = document.getElementById('chatbox');
-            
+
             if (userMessage.trim() === '') return;
 
             // Display the user's message
             chatbox.innerHTML += `<p class="user-message">${userMessage}</p>`;
-            document.getElementById('userInput').value = ''; // Clear input field
+            document.getElementById('userInput').value = ''; // Clear the input field
 
-            // Simulate a bot response
+            // Simulate agent response after a short delay
             setTimeout(() => {
-                const botResponse = getBotResponse(userMessage);
-                chatbox.innerHTML += `<p class="bot-message">${botResponse}</p>`;
+                const agentResponse = getAgentResponse(userMessage);
+                chatbox.innerHTML += `<p class="agent-message">${agentResponse}</p>`;
                 chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
             }, 1000);
         }
 
-        // Function to generate bot responses based on user input
-        function getBotResponse(userMessage) {
+        // Simulated agent response function
+        function getAgentResponse(userMessage) {
             const lowerCaseMessage = userMessage.toLowerCase();
             if (lowerCaseMessage.includes('tractor') || lowerCaseMessage.includes('equipment')) {
-                return "We offer a variety of high-quality tractors and farming equipment. Do you need help finding something specific?";
+                return "I can assist you with information about our tractors and equipment. What are you looking for today?";
             } else if (lowerCaseMessage.includes('maintenance')) {
-                return "Regular maintenance is key! Be sure to check your oil, tire pressure, and perform routine inspections.";
+                return "For maintenance, we offer full service options. You can contact us to schedule an appointment.";
             } else if (lowerCaseMessage.includes('pricing')) {
-                return "Our prices vary depending on the model and features. Would you like to know the pricing for a specific tractor?";
+                return "Our pricing depends on the type and model of the tractor. Would you like a quote for a specific model?";
             } else {
-                return "I'm not sure about that, but feel free to ask me anything about tractors, farming, or our services!";
+                return "I'm happy to assist with any questions. Let me know how I can help!";
             }
         }
     </script>
