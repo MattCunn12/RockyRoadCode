@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot | Rock Road Tractor Supply</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .header h1, .footer h2 {
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        .nav a {
+            padding: 14px 20px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        .chatbox {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            height: 400px;
+            overflow-y: scroll;
+            padding: 15px;
+            background-color: #f9f9f9;
+            margin-bottom: 1.5em;
+        }
+
+        .chatbox p {
+            margin: 10px 0;
+        }
+
+        .chatbox .bot-message {
+            color: #007bff;
+        }
+
+        .chatbox .user-message {
+            text-align: right;
+            color: #28a745;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .chat-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .chat-submit:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Rock Road Tractor Supply</h1>
+        <p>Your trusted source for high-quality tractors and farm equipment.</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="createAccount.html">Create Account</a>
+        <a href="forum.html">Community Forum</a>
+        <a href="aiChatbot.html">AI Chatbot</a>
+        <a href="faq.html">FAQ</a>
+        <a href="liveChat.html">Live Chat</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="chat-container">
+
+        <h2>AI Chatbot</h2>
+        <p>How can we assist you today? Ask anything about our tractors and services!</p>
+
+        <!-- Chatbox -->
+        <div class="chatbox" id="chatbox">
+            <p class="bot-message">Hello! I'm your virtual assistant. How can I help you today?</p>
+        </div>
+
+        <!-- Chat Input Section -->
+        <input type="text" id="userInput" class="chat-input" placeholder="Type your message..." />
+        <button class="chat-submit" onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <h2>Stay Connected with Rock Road Tractor Supply</h2>
+        <p>&copy; 2024 Rock Road Tractor Supply | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Function to handle sending user messages and displaying bot responses
+        function sendMessage() {
+            const userMessage = document.getElementById('userInput').value;
+            const chatbox = document.getElementById('chatbox');
+            
+            if (userMessage.trim() === '') return;
+
+            // Display the user's message
+            chatbox.innerHTML += `<p class="user-message">${userMessage}</p>`;
+            document.getElementById('userInput').value = ''; // Clear input field
+
+            // Simulate a bot response
+            setTimeout(() => {
+                const botResponse = getBotResponse(userMessage);
+                chatbox.innerHTML += `<p class="bot-message">${botResponse}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+            }, 1000);
+        }
+
+        // Function to generate bot responses based on user input
+        function getBotResponse(userMessage) {
+            const lowerCaseMessage = userMessage.toLowerCase();
+            if (lowerCaseMessage.includes('tractor') || lowerCaseMessage.includes('equipment')) {
+                return "We offer a variety of high-quality tractors and farming equipment. Do you need help finding something specific?";
+            } else if (lowerCaseMessage.includes('maintenance')) {
+                return "Regular maintenance is key! Be sure to check your oil, tire pressure, and perform routine inspections.";
+            } else if (lowerCaseMessage.includes('pricing')) {
+                return "Our prices vary depending on the model and features. Would you like to know the pricing for a specific tractor?";
+            } else {
+                return "I'm not sure about that, but feel free to ask me anything about tractors, farming, or our services!";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Registration</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -60,16 +60,19 @@
 
 <!-- Navbar -->
 <nav>
-  <div class="logo">My Website</div>
+  <div class="logo">Rocky Road Tractor Supply</div>
   <div>
     <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="createAccount.html">Create Account</a>
+    <a href="forum.html">Community Forum</a>
+    <a href="aiChatbot.html">AI Chatbot</a>
+    <a href="faq.html">FAQ</a>
+    <a href="liveChat.html">Live Chat</a>
   </div>
 </nav>
 
-<!-- Contact Section -->
-<h1>Contact Us</h1>
+<!-- Sign in Section -->
+<h1>Sign In</h1>
 <div class="contact-form">
   <form action="submit_form.php" method="POST">
     <label for="name">Full Name</label>
@@ -78,10 +81,26 @@
     <label for="email">Email Address</label>
     <input type="email" id="email" name="email" required>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Password</label>
+    <textarea id="message" name="message" rows="1" required></textarea>
 
-    <button type="submit">Send Message</button>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<!-- Create an Account Section -->
+<h1>Create an Account</h1>
+<div class="contact-form">
+  <form action="submit_form.php" method="POST">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Password</label>
+    <textarea id="message" name="message" rows="1" required></textarea>
+
+    <button type="submit">Submit</button>
   </form>
 </div>
 

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum | Rock Road Tractor Supply</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .header h1, .footer h2 {
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        .nav a {
+            padding: 14px 20px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        .forum-header {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .forum-posts {
+            margin-bottom: 3em;
+        }
+
+        .forum-post {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 1.5em;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .forum-post h3 {
+            margin: 0;
+        }
+
+        .forum-post p {
+            margin: 10px 0;
+        }
+
+        .post-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .post-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Rock Road Tractor Supply</h1>
+        <p>Your trusted source for high-quality tractors and farm equipment.</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="createAccount.html">Create Account</a>
+        <a href="forum.html">Community Forum</a>
+        <a href="aiChatbot.html">AI Chatbot</a>
+        <a href="faq.html">FAQ</a>
+        <a href="liveChat.html">Live Chat</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container">
+
+        <!-- Forum Header -->
+        <div class="forum-header">
+            <h2>Welcome to the Community Forum</h2>
+            <p>Share your experiences, ask questions, and connect with fellow tractor enthusiasts!</p>
+        </div>
+
+        <!-- Forum Posts -->
+        <div class="forum-posts">
+            <div class="forum-post">
+                <h3>How to Maintain Your Tractor</h3>
+                <p><strong>By John Doe</strong> | <em>Posted on: January 15, 2024</em></p>
+                <p>Maintaining your tractor is crucial for longevity. Here are some tips on how to ensure your machine runs smoothly...</p>
+                <button class="post-button">Read More</button>
+            </div>
+
+            <div class="forum-post">
+                <h3>Best Tractor for Small Farms</h3>
+                <p><strong>By Jane Smith</strong> | <em>Posted on: January 10, 2024</em></p>
+                <p>Looking for the perfect tractor for small-scale farming? Let’s discuss the options that offer the best value for your farm...</p>
+                <button class="post-button">Read More</button>
+            </div>
+
+            <div class="forum-post">
+                <h3>How to Troubleshoot Common Tractor Issues</h3>
+                <p><strong>By Mike Johnson</strong> | <em>Posted on: December 20, 2023</em></p>
+                <p>If you’ve encountered common issues with your tractor, here’s a guide to troubleshooting some of the most frequent problems...</p>
+                <button class="post-button">Read More</button>
+            </div>
+        </div>
+
+        <!-- New Post Section -->
+        <div class="new-post">
+            <h3>Create a New Post</h3>
+            <p>Have something to share with the community? Post your questions or advice here!</p>
+            <form action="#">
+                <input type="text" placeholder="Enter your post title" style="width: 100%; padding: 10px; margin-bottom: 1em;">
+                <textarea placeholder="Write your post content here..." style="width: 100%; padding: 10px; height: 150px; margin-bottom: 1em;"></textarea>
+                <button type="submit" class="post-button">Post</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <h2>Stay Connected with Rock Road Tractor Supply</h2>
+        <p>&copy; 2024 Rock Road Tractor Supply | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
