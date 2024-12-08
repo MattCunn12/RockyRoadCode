@@ -2,8 +2,8 @@ CREATE DATABASE ROCKYROAD;
 
 CREATE TABLE CUSTOMER (
 	CustID INT NOT NULL PRIMARY KEY,
-	CustFName varchar(50) NOT NULL,
-	CustLName varchar(50) NOT NULL,
+	CustFName varchar(50),
+	CustLName varchar(50),
 	DOB date NOT NULL,
 	Phone varchar(20),
 	CustEmail varchar(50) NOT NULL,
