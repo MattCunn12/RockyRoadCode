@@ -32,7 +32,7 @@
   </div>
 
   <!-- Forum Posts Section -->
-  <div class="max-w-5xl mx-auto space-y-8">
+  <div class="max-w-5xl mx-auto space-y-8" id="posts-container">
     <!-- Forum Post Template -->
     <div class="bg-neutral-800 p-6 rounded-lg hover:bg-neutral-700 transition">
       <h3 class="text-xl font-bold">How to Maintain Your Tractor</h3>
@@ -59,7 +59,7 @@
   <!-- Create New Post Section -->
   <div class="max-w-5xl mx-auto mt-16 bg-neutral-800 p-8 rounded-lg">
     <h2 class="text-2xl font-bold mb-6">Create a New Post</h2>
-    <form action="#" method="POST" class="space-y-6">
+    <form action="#" method="POST" class="space-y-6" id="post-form">
       <div>
         <label for="postTitle" class="block text-gray-400 text-lg mb-2">Post Title</label>
         <input type="text" id="postTitle" name="postTitle" required class="w-full p-4 text-white bg-neutral-700 rounded-md placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -72,6 +72,46 @@
 
       <button type="submit" class="w-full py-4 text-lg font-semibold bg-blue-600 text-white rounded-md hover:bg-blue-500 transition">Post</button>
     </form>
+    <script>
+      // JavaScript to handle form submission and add posts to the page
+      const postForm = document.getElementById('post-form');
+      const postsContainer = document.getElementById('posts-container');
+
+      postForm.addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          // Get form input values
+          const title = document.getElementById('postTitle').value;
+          const content = document.getElementById('postContent').value;
+          
+          // Date format
+          const currentDate = new Date();
+
+          const formattedDate = currentDate.toLocaleDateString('en-US', {
+          month: 'long', // Full month name (e.g., December)
+          day: 'numeric', // Day without leading zero
+          year: 'numeric', // Full year
+          });
+
+          // Create a new post element
+          const postElement = document.createElement('div');
+          postElement.classList.add('post');
+          postElement.innerHTML = `
+              <div class="bg-neutral-800 p-6 rounded-lg hover:bg-neutral-700 transition">
+                <h3 class="text-xl font-bold">${title}</h3>
+                <p class="text-gray-400 mt-2"><strong>By Admin</strong> | <em>Posted on: ${formattedDate}</em></p>
+                <p class="text-gray-300 mt-4">${content}</p>
+                <button class="mt-4 px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-500 transition">Read More</button>
+              </div>
+          `;
+
+          // Append the new post below existing posts
+          postsContainer.appendChild(postElement);
+
+          // Clear the form
+          postForm.reset();
+      });
+  </script>
   </div>
 </section>
 
